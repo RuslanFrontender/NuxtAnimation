@@ -1,5 +1,5 @@
 {
-  "name": "TFTLNuxtAnimation",
+  "name": "directives-animation",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -15,12 +15,12 @@
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
-    "*.{css,vue}": "stylelint"
+    "*.{css,scss,vue}": "stylelint"
   },
   "dependencies": {
     "core-js": "^3.15.1",
-    "nuxt": "^2.15.7",
-    "stylelint-scss": "^4.0.0"
+    "gsap": "file:gsap-bonus.tgz",
+    "nuxt": "^2.15.7"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
@@ -32,16 +32,21 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^27.0.5",
     "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
     "husky": "^6.0.0",
     "jest": "^27.0.5",
     "lint-staged": "^10.5.4",
     "prettier": "^2.3.2",
+    "sass": "^1.43.5",
+    "sass-loader": "^10.2.0",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^4.0.0",
     "vue-jest": "^3.0.4"
   }
 }

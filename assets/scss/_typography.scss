@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+h1 {
+  font-size: 72px;
+}
+h2 {
+  font-size: 60px;
+}
+
+.h1 {
+  font-size: 96px;
+  text-transform: uppercase;
+}
+.h2 {
+  font-size: 48px;
+}
+.description {
+  font-size: 18px;
+  & > span {
+    color: purple;
+  }
+}
