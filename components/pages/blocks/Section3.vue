@@ -1,7 +1,7 @@
 <template>
   <TheSection>
     <TheText
-      v-tftl-fadein="{
+      v-tftl-fadein:down="{
         scrollTrigger: {
           toggleActions: 'play none none reset',
         },
@@ -9,12 +9,12 @@
     />
     <template #desc>
       <div class="description">
-        <span><strong>v-tftl-fadein</strong></span
+        <span><strong>v-tftl-fadein:down</strong></span
         ><br /><br />
         //
         <br /><br />
         <pre>
-  v-tftl-fadein="{
+  v-tftl-fadein:down="{
    scrollTrigger: {
      toggleActions: 'play none none reset',
    }

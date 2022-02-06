@@ -14,7 +14,7 @@
         </li>
       </ul>
     </nav>
-    <ScrollDownIcon v-if="isPage" v-tftl-fadein="{ delay: 1 }" />
+    <ScrollDownIcon v-if="isPage" v-tftl-fadein:down="{ delay: 1 }" />
   </section>
 </template>
 
