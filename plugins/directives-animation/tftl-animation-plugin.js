@@ -1,6 +1,9 @@
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { gsap } from 'gsap'
-import setDirectives from './directives'
+import setDirectivesCustom from './directives-custom'
+import setDirectivesTexts from './directives-texts'
+import setDirectivesBlocks from './directives-blocks'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -30,7 +33,9 @@ function TFTLAnimation() {
 
 export default (({ app }, inject) => {
 	const tftl = new TFTLAnimation()
-  setDirectives(tftl)
+  setDirectivesCustom(tftl)
+  setDirectivesTexts(tftl)
+  setDirectivesBlocks(tftl)
 	inject('tftl', tftl)
 })
 

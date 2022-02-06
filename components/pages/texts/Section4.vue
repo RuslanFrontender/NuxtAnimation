@@ -1,7 +1,7 @@
 <template>
   <TheSection>
     <TheText
-      v-tftl-text-lines="{
+      v-tftl-text-lines:fadein="{
         duration: 0.5,
         y: 120,
         scrollTrigger: {
@@ -11,12 +11,12 @@
     />
     <template #desc>
       <div class="description">
-        <span><strong>v-tftl-text-lines</strong></span
+        <span><strong>v-tftl-text-lines:fadein</strong></span
         ><br /><br />
         //
         <br /><br />
         <pre>
-  v-tftl-text-lines="{
+  v-tftl-text-lines:fadein="{
     duration: 0.5,
     y: 120,
     scrollTrigger: {
@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import TheText from './TheText.vue'
-import TheSection from './TheSection.vue'
+import TheText from '../../TheText.vue'
+import TheSection from '../../TheSection.vue'
 
 export default {
   components: {
