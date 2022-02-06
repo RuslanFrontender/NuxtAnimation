@@ -41,6 +41,10 @@ export default {
         text: 'blocks',
         href: '/blocks',
       },
+      {
+        text: 'images',
+        href: '/images',
+      },
     ],
   }),
 }
