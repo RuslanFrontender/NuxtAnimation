@@ -1,6 +1,6 @@
 <template>
   <section class="hero">
-    <h1 v-tftl-letters class="h1">TFTL Animation</h1>
+    <h1 v-tftl-letters class="h1">Nuxt Animation</h1>
     <nav class="navigation">
       <ul class="menu">
         <li
