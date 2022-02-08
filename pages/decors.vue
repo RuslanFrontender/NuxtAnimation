@@ -3,29 +3,20 @@
     <TheHero :is-page="true" />
     <Section1 />
     <Section2 />
-    <Section3 />
-    <Section4 />
-    <Section5 />
   </main>
 </template>
 
 <script>
 import { gsap } from 'gsap'
 import TheHero from '~/components/TheHero.vue'
-import Section1 from '~/components/pages/images/Section1.vue'
-import Section2 from '~/components/pages/images/Section2.vue'
-import Section3 from '~/components/pages/images/Section3.vue'
-import Section4 from '~/components/pages/images/Section4.vue'
-import Section5 from '~/components/pages/images/Section5.vue'
+import Section1 from '~/components/pages/decors/Section1.vue'
+import Section2 from '~/components/pages/decors/Section2.vue'
 
 export default {
   components: {
     TheHero,
     Section1,
     Section2,
-    Section3,
-    Section4,
-    Section5,
   },
   transition: {
     leave(el, done) {
@@ -45,9 +36,7 @@ export default {
         }
       )
     },
-
     enter(el, done) {
-      console.log('enter')
       gsap.to('.cover', {
         transformOrigin: 'right center',
         scaleX: 0,

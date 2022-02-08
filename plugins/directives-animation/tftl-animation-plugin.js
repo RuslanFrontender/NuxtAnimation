@@ -4,6 +4,7 @@ import setDirectivesCustom from './directives-custom'
 import setDirectivesTexts from './directives-texts'
 import setDirectivesBlocks from './directives-blocks'
 import setDirectiveImages from './directives-images'
+import setDirectiveLines from './directives-lines'
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -38,6 +39,8 @@ export default (({ app }, inject) => {
   setDirectivesTexts(tftl)
   setDirectivesBlocks(tftl)
   setDirectiveImages(tftl)
+  setDirectiveLines(tftl)
 	inject('tftl', tftl)
+
 })
 

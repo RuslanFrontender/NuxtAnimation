@@ -45,6 +45,10 @@ export default {
         text: 'images',
         href: '/images',
       },
+      {
+        text: 'decors',
+        href: '/decors',
+      },
     ],
   }),
 }
