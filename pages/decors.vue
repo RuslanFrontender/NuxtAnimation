@@ -3,6 +3,8 @@
     <TheHero :is-page="true" />
     <Section1 />
     <Section2 />
+    <Section3 />
+    <Section4 />
   </main>
 </template>
 
@@ -11,12 +13,16 @@ import { gsap } from 'gsap'
 import TheHero from '~/components/TheHero.vue'
 import Section1 from '~/components/pages/decors/Section1.vue'
 import Section2 from '~/components/pages/decors/Section2.vue'
+import Section3 from '~/components/pages/decors/Section3.vue'
+import Section4 from '~/components/pages/decors/Section4.vue'
 
 export default {
   components: {
     TheHero,
     Section1,
     Section2,
+    Section3,
+    Section4,
   },
   transition: {
     leave(el, done) {

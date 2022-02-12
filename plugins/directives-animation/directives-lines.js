@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default  ( $tftl ) => {
 	Vue.directive('tftl-scale', {
     bind(el, binding) {
+      const { transformOrigin = "center center" } = binding.value || {}
       const { arg } = binding
       let argOptions = {}
       switch(arg) {
@@ -36,9 +37,10 @@ export default  ( $tftl ) => {
             }
             break;
         default:
-          argOptions = { scaleX: 0, transformOrigin: 'left center' }
+          argOptions = { scale: 0 }
       }
       gsap.set(el, {
+        transformOrigin,
         ...argOptions,
       })
     },
@@ -74,7 +76,7 @@ export default  ( $tftl ) => {
               }
               break;
           default:
-            argOptions = { scaleX: 1 }
+            argOptions = { scale: 1 }
         }
 				const tl = gsap.timeline({
           ease: 'power2.outIn',
@@ -94,4 +96,57 @@ export default  ( $tftl ) => {
 			$tftl.add(el)
 		}
 	})
+  Vue.directive('tftl-svg-line', {
+    bind(el, binding) {
+        // get argument
+        const { arg } = binding
+        let argOptions = {}
+        switch(arg) {
+          case 'reverse':
+            argOptions = {
+              'stroke-dashoffset': -1,
+            }
+            break;
+          default:
+            argOptions = {
+              'stroke-dashoffset': 1,
+            }
+        }
+      gsap.set(el, {
+        attr: {
+          pathLength: 1,
+          'stroke-dasharray': 1,
+          ...argOptions,
+        }
+      })
+    },
+    inserted(el, binding) {
+      // eslint-disable-next-line
+      el.tftl = () => {
+        // get optioins
+				const { scrollTrigger = {}, delay = 0, duration = 1, ease = 'power2.inOut' } = binding.value || {}
+
+
+
+				const tl = gsap.timeline({
+          ease: 'power2.outIn',
+					scrollTrigger: {
+						trigger: el,
+						// toggleActions: "restart none none none",
+						...scrollTrigger,
+					}
+				})
+				tl.to(el, {
+          ease,
+					duration,
+					delay,
+          attr: {
+            'stroke-dashoffset': 0
+          }
+
+				})
+			}
+			$tftl.add(el)
+    }
+  })
 }
