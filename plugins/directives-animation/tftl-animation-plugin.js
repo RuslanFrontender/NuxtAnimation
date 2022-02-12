@@ -5,12 +5,14 @@ import setDirectivesTexts from './directives-texts'
 import setDirectivesBlocks from './directives-blocks'
 import setDirectiveImages from './directives-images'
 import setDirectiveLines from './directives-lines'
+import setDirectivesTimelines from './directives-timeline-elements'
 
 
 gsap.registerPlugin(ScrollTrigger)
 
 function TFTLAnimation() {
 	const elements = new Set()
+  const timelines = {}
 	return {
 		start() {
 			// return false;
@@ -29,7 +31,25 @@ function TFTLAnimation() {
 			.filter(st => st !== ScrollTrigger.getById('direction'))
 			.forEach(st => st.kill())
 			elements.clear()
-		}
+
+      this.clearTimelines()
+		},
+    clearTimelines() {
+      Object.keys(timelines).forEach(key => delete timelines[key])
+    },
+    addElementToTimeline(timeline, object) {
+      if(!timelines[timeline]) {
+        timelines[timeline] = {}
+        timelines[timeline].elements = {}
+      }
+      timelines[timeline].elements[object.name] = object.el
+    },
+    getTimeline(name) {
+      return timelines[name] ? timelines[name].elements : {}
+    },
+    getTimelines() {
+      return this.timelines
+    }
 	}
 }
 
@@ -40,6 +60,7 @@ export default (({ app }, inject) => {
   setDirectivesBlocks(tftl)
   setDirectiveImages(tftl)
   setDirectiveLines(tftl)
+  setDirectivesTimelines(tftl)
 	inject('tftl', tftl)
 
 })

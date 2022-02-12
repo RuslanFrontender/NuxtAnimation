@@ -73,6 +73,7 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.$tftl.start()
+      console.log(this.$tftl.getTimeline('header'))
     })
   },
   destroyed() {
