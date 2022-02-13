@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'TFTLNuxtAnimation',
+    title: 'NuxtAnimation',
     htmlAttrs: {
       lang: 'en'
     },
@@ -40,5 +40,5 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['gsap']
-  }
+  },
 }
