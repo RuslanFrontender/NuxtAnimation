@@ -10,5 +10,13 @@ export default  ( $tftl ) => {
         $tftl.addElementToTimeline(timeline, { name, el })
       }
     },
+    unbind(el, binding) {
+      const timeline = binding.arg || ''
+      const { name } = binding.value || {}
+      if(timeline && name) {
+        $tftl.removeElementFromTimeline(timeline, { name, el })
+      }
+
+    }
   })
 }

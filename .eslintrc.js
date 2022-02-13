@@ -19,6 +19,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'object-curly-spacing': ['error', 'always', { objectsInObjects: false }],
-    'max-len': ['error', { code: 100, ignoreStrings: true }]
+    'max-len': ['error', { code: 100, ignoreStrings: true }],
+    'no-param-reassign': ['warn']
   },
 };

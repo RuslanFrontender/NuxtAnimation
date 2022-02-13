@@ -49,6 +49,10 @@ export default {
         text: 'decors',
         href: '/decors',
       },
+      {
+        text: 'timelines',
+        href: '/timelines',
+      },
     ],
   }),
 }

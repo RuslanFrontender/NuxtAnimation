@@ -37,18 +37,39 @@ function TFTLAnimation() {
     clearTimelines() {
       Object.keys(timelines).forEach(key => delete timelines[key])
     },
+    addTimeline(name, tl) {
+      if(timelines[name]) {
+        timelines[name].timeline = tl
+      }
+    },
     addElementToTimeline(timeline, object) {
       if(!timelines[timeline]) {
         timelines[timeline] = {}
         timelines[timeline].elements = {}
       }
-      timelines[timeline].elements[object.name] = object.el
+      if(!timelines[timeline].elements[object.name]) {
+        timelines[timeline].elements[object.name] = new Set()
+      }
+      timelines[timeline].elements[object.name].add(object.el)
+    },
+    removeElementFromTimeline(timeline, object) {
+      if( timelines[timeline] &&
+          timelines[timeline].elements &&
+          timelines[timeline].elements[object.name] ) {
+        timelines[timeline].elements[object.name].delete(object.el)
+      }
     },
     getTimeline(name) {
-      return timelines[name] ? timelines[name].elements : {}
+      return timelines[name]
+    },
+    getTimelineElements(name) {
+      const els = timelines[name] && timelines[name].elements
+      const result = {}
+      Object.keys(els).forEach(key =>( result[key] = Array.from(els[key])) )
+      return result
     },
     getTimelines() {
-      return this.timelines
+      return timelines
     }
 	}
 }
